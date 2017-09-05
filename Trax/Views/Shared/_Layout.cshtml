@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <title>@ViewBag.Title - tTrax</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+        @RenderSection("scripts", required: false)
+        
+
+        <link href="~/Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+        <link href="~/Content/banner.css" rel="stylesheet" />
+
+        <script src="~/Scripts/jquery.js"></script>
+        <script src="~/Scripts/jquery.mobile-1.4.5.js"></script>
+        <script src="~/Scripts/Banner.js"></script>
+
+    </head>
+    <body style="background-color:#999999 !important">
+        
+        <div id="body" style="background-color:Red">
+            @RenderBody()
+        </div>
+
+        <link href="~/Content/Trax.css" rel="stylesheet" />
+        
+        <script src="~/Scripts/Trax.js"></script>
+
+    </body>
+</html>

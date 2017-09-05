@@ -1,0 +1,24 @@
+﻿@using System.Configuration
+@model IEnumerable<Trax.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+    
+<div id="pg1" data-role="page" style="background-color:#4F4F4F">
+</div>
+
+    <script>
+            
+        $(document).ready(function() {
+            var B = new PgBanner('o1', 'Stop and Listen', 50, '#000000', 'pg1');
+            B.HasSearchBox = true;
+            B.Draw();
+            B.AddButton('banner-list-btn', 'View as list only');
+            B.AddButton('banner-list-img-btn','View as list and thumbnails');
+        });
+        
+
+    </script>

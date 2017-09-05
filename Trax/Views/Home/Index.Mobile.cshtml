@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Trax.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="baz-header"><div class="baz-header-menu"><div class="baz-close"></div></div>Chameleon</div>
+
+<script>
+    $(document).ready(function () {
+        $('body').css({ 'background-color': '#333333', margin:'0' });
+
+        $('.baz-header-menu').on('click', function() {
+            DrawMenu();
+        });
+
+    });
+    
+    function Msg(msg) {
+        alert(msg);
+    }
+    
+    function DrawMenu() {
+        var m = new Menu('groups', '20px', '20px', ['Genre', 'Year Released', 'Certification', 'Language', 'Region']);
+        m.Draw();
+    }
+</script>
