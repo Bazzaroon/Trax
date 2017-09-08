@@ -16,6 +16,8 @@ PgBanner.prototype.Draw = function() {
     if (this.HasSearchBox) {
         mkUp += "<input id='sb" + id + "' type='text' class='banner-searchbox'/>";
         mkUp += "<div class='searchbtn'></div>";
+        mkUp += "<div class='genrebtn' id='genre" + id + "'></div>";
+
     }
     mkUp += "</td>";
     mkUp += "<td>" + this.Title + "</td>";
@@ -23,6 +25,14 @@ PgBanner.prototype.Draw = function() {
     mkUp += "</tr></table></div>";
 
     $('#' + this.ContainerId).append(mkUp);
+    
+    //Clickers
+    $('#sbtn' + id).on('click', function () {
+        alert('Searchbutton pressed');
+    });
+    $('#genre' + id).on('mouseenter', function () {
+        var G = new CustomDropDown('Plonker', null, null);
+    });
 };
 
 PgBanner.prototype.remove = function() {
@@ -34,4 +44,16 @@ PgBanner.prototype.AddButton = function(oclass, tooltip) {
     $('#'+id).append("<div title='" + tooltip + "' class='" + oclass + "'></div>");
 };
 
+//Dropdowns
+
+function CustomDropDown(id, names, funcs) {
+    this.Id = id;
+    this.Names = names;
+    this.Funcs = funcs;
+    this.Create();
+}
+
+CustomDropDown.prototype.Create = function () {
+    alert('This has been created with an id of ' + this.Id);
+};
 
